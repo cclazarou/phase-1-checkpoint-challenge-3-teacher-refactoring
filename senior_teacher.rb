@@ -8,6 +8,7 @@ class SeniorTeacher < Teacher
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
     @target_raise = 1000
+    @rating_standard = 90
   end
 
   def teach_stuff
@@ -22,15 +23,4 @@ class SeniorTeacher < Teacher
     puts "Hey newbie!  Here are some common pitfalls.  Don't fall in them!"
   end
 
-  def set_performance_rating(rating)
-    response = ""
-    if rating > 90
-      response = "Yay, I'm a great employee!"
-      receive_raise(@target_raise)
-    else
-      response += "Oh, well -- thanks to this actionable, specific, and kind "
-      response += "feedback, I'll do better next time."
-    end
-    response
-  end
 end

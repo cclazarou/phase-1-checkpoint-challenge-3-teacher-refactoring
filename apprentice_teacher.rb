@@ -7,6 +7,7 @@ class ApprenticeTeacher < Teacher
     @name = options.fetch(:name, "")
     @target_raise = 800
     @phase = 3
+    @rating_standard = 80
   end
 
   def teach_stuff
@@ -21,15 +22,4 @@ class ApprenticeTeacher < Teacher
     puts "Whoa. I know ruby-fu"
   end
 
-  def set_performance_rating(rating)
-    response = ""
-    if rating > 80
-      response = "Yay, I'm a great employee!"
-      receive_raise(@target_raise)
-    else
-      response += "Oh, well -- thanks to this actionable, specific, and kind "
-      response += "feedback, I'll do better next time."
-    end
-    response
-  end
 end
